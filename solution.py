@@ -116,7 +116,7 @@ test_data = pd.read_csv('test.csv')
 
 nominal_merged = pd.concat([train_data[nominal_columns], test_data[nominal_columns]])
 nominal_merged.dropna(inplace=True)
-#
+
 pipeline_num = Pipeline([
     ('dropper', FeaturesDropper(columns_to_drop)),
     ('ordinal', HandleOrdinalFeatures(ordinal_columns, ordinal_maps)),
