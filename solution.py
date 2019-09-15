@@ -108,14 +108,11 @@ class SelectFeatures(BaseEstimator, TransformerMixin):
         return X.loc[:, self.features]
 
 
-# create train ant test pandas DataFrame from csv
 iowa_file_path = 'train.csv'
 train_data = pd.read_csv(iowa_file_path)
 y_pre = train_data.SalePrice.to_frame()
 test_data = pd.read_csv('test.csv')
 
-
-# Create target object and call it y
 
 nominal_merged = pd.concat([train_data[nominal_columns], test_data[nominal_columns]])
 nominal_merged.dropna(inplace=True)
